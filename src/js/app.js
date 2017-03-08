@@ -16,7 +16,8 @@
         controller: 'LoginController as loginCtrl',
     }).state('ShopParent.inventory', {
           url: 'inventory',
-          templateUrl: './templates/inventory.html'
+          templateUrl: './templates/inventory.html',
+          controller: 'InventoryController as invenCtrl',
       });
     });
 })();

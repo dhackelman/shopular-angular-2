@@ -1,5 +1,5 @@
 (function() {
-  angular.module('ShopApp').controller('LoginController', function($scope) {
+  angular.module('ShopApp').controller('LoginController', function($scope, $state, StorageService) {
     $scope.ownerObj = {
       username: '',
       password: ''
@@ -11,7 +11,11 @@
         password: event.target[1].value
       };
       console.log($scope.ownerObj);
+      StorageService.set('users', $scope.ownerObj);
+      $state.go('ShopParent.inventory');
     };
+
+    // $state.go('ShopApp.inventory');
   });
 
 })();
